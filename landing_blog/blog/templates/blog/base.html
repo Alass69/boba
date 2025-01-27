@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Blog{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,.05);
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .nav-link {
+            color: #343a40;
+        }
+        .nav-link:hover {
+            color: #007bff;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,.03);
+        }
+        .card-title a {
+            color: #343a40;
+            text-decoration: none;
+        }
+        .card-title a:hover {
+            color: #007bff;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .navbar-primary {
+            background-color: #007bff !important;
+        }
+        .navbar-primary .navbar-brand {
+            color: white !important;
+        }
+        .comment-border {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .comment-header {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            padding: 0 2px;
+            font-size: 0.85em;
+            color: #777;
+            background-color: transparent;
+        }
+
+        .comment-body {
+            margin-top: 5px;
+        }
+
+        .reply-btn {
+            background: none;
+            border: none;
+            color: #007bff;
+            padding: 0;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+
+        .reply-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'landing_page' %}">My Blog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'landing_page' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 mx-auto" action="{% url 'search_posts' %}" method="get">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search articles..." aria-label="Search" name="q">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                </ul>
+            </div>
+        </div>
+    </nav>
+        {% if post_detail %}
+
+        <div class="container mt-5" style="padding-top: 50px;">
+        {% else %}
+        <div class="container mt-4">
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </div>
+    <section id="contact-us" class="py-5">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <p class="lead">Get in touch to learn more about our app and partnership opportunities.</p>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <div data-tf-live="01JJM43NCW1GZHK10DA3G8K2R3"></div><script src="//embed.typeform.com/next/embed.js"></script>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-light py-3 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 Medical Engineering Co. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.reply-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const replyForm = this.nextElementSibling;
+                    if (replyForm.style.display === 'none') {
+                        replyForm.style.display = 'block';
+                    } else {
+                        replyForm.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

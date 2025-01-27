@@ -1,0 +1,50 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Blog Posts</h1>
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'a9f7751a96ee0d271080cb57b94a64fc',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/a9f7751a96ee0d271080cb57b94a64fc/invoke.js"></script>
+            <div class="row">
+                {% for post in posts %}
+                <div class="col-md-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                <a href="{% url 'blog_detail' author_username=post.author.username slug=post.slug %}">{{ post.title }}</a>
+                            </h2>
+                            <p class="card-text">
+                                <small class="text-muted">By {{ post.author.username }} on {{ post.created_at }}</small>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h2>Similar Articles</h2>
+            <ul class="list-unstyled">
+                {% for similar_post in similar_posts %}
+                <li class="mb-2">
+                    <a href="{% url 'blog_detail' author_username=similar_post.author.username slug=similar_post.slug %}">{{ similar_post.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <h2>Ads</h2>
+            <p>Placeholder for ads.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
