@@ -1,0 +1,184 @@
+/* blog_detail.css */
+.blog-detail-container {
+    display: grid;
+    grid-template-columns: 70% 30%; /* Two column layout */
+    gap: 20px; /* Gap between columns */
+    width: 95%; /* Wider container */
+    max-width: 1200px; /* Increased max-width */
+    margin: 30px auto; /* Increased top margin */
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+.blog-title {
+    font-size: 2.8em; /* Increased title size */
+    margin-bottom: 15px; /* Increased margin */
+    color: #222; /* Slightly darker title color */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow */
+    text-align: center;
+}
+
+.blog-meta {
+    font-size: 1.1em; /* Slightly larger */
+    color: #888; /* Lighter color */
+    margin-bottom: 15px; /* Increased margin */
+    text-align: center;
+    font-style: italic; /* Italicized style */
+}
+
+.blog-content {
+    font-size: 1.2em; /* Slightly larger font size for content */
+    line-height: 1.8; /* Improved line height for readability */
+    margin-bottom: 35px; /* Increased margin */
+    padding: 15px 30px; /* Adjust padding for content */
+    background-color: #fefefe; /* Very light grey background for content section */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Slightly stronger shadow for content box */
+}
+
+.blog-tags {
+    margin-bottom: 20px;
+    text-align: center; /* Center align tags */
+}
+
+.blog-tags a {
+    display: inline-block;
+    background-color: #f0f0f0; /* Lighter background for tags */
+    color: #555; /* Darker text for tags */
+    padding: 8px 15px; /* Slightly larger padding */
+    margin: 5px; /* Add margin between tags */
+    text-decoration: none;
+    border-radius: 20px; /* More rounded tags */
+    font-size: 0.9em;
+    transition: background-color 0.3s ease; /* Smooth background transition on hover */
+}
+
+.blog-tags a:hover {
+    background-color: #e0e0e0; /* Darker background on hover */
+}
+
+.comments-section {
+    margin-top: 30px; /* Reduced top margin */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.comments-title {
+    font-size: 1.6em; /* Slightly larger font size */
+    margin-bottom: 25px; /* Increased margin bottom */
+    color: #333; /* Darker color for title */
+    text-align: left; /* Align comments title to the left */
+}
+
+.comment {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white; /* White background for comments */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow for each comment */
+    border-left: none; /* Remove border left */
+}
+
+.comment-author {
+    font-weight: bold;
+    margin-bottom: 8px; /* Increased margin */
+    color: #333; /* Darker author name */
+}
+
+.comment-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px; /* Add margin below date */
+}
+
+.comment-content {
+    line-height: 1.6; /* Improved line height */
+    color: #444; /* Slightly darker text */
+}
+
+.login-to-comment,
+.leave-comment-form {
+    margin-top: 20px;
+}
+
+.similar-articles-section {
+    margin-top: 30px; /* Reduced top margin */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.similar-articles-title {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left; /* Align title to the left */
+}
+
+.similar-articles-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Use flexbox for horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    gap: 20px; /* Spacing between articles */
+}
+
+.similar-article-item {
+    margin-bottom: 0; /* Remove vertical margin */
+    flex: 0 0 auto; /* Don't grow, don't shrink, auto width */
+    width: 200px; /* Fixed width for each item */
+}
+
+.similar-article-link {
+    text-decoration: none;
+    color: #333; /* Darker color for article links */
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
+}
+
+.similar-article-link:hover {
+    background-color: #f0f0f0; /* Lighter background on hover */
+}
+
+.ads-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    text-align: center; /* Center ads section content */
+}
+
+.ads-section h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.ads-section p {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.back-to-blog-link {
+    display: block;
+    margin-top: 25px;
+    text-align: center; /* Center the back to blog link */
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.back-to-blog-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+}

@@ -3,74 +3,31 @@
 
 {% block content %}
 <div class="container">
-    <!-- Ad Placeholder -->
-    <div id="ad-placeholder" style="text-align: center; margin-bottom: 20px;">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '0d368f1d39a3bb78923dc267e7844579',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/0d368f1d39a3bb78923dc267e7844579/invoke.js"></script>
-    </div>
-
-    <section class="hero-section text-center py-5">
-        <img src="{% static 'blog/images/logo.png' %}" alt="ER Triage App Logo" class="img-fluid mb-4" style="max-width: 200px;">
-        <h1>Emergency Room Triage App</h1>
-        <p class="lead">Revolutionizing emergency care with AI-powered triage.</p>
-        <a href="#learn-more" class="btn btn-primary btn-lg">Learn More</a>
-    </section>
-
-    <section id="about-us" class="py-5">
+    <script async="async" data-cfasync="false" src="//pl25699908.profitablecpmrate.com/50fa463e1b3bccaed9a81c2231c91765/invoke.js"></script>
+    <div id="container-50fa463e1b3bccaed9a81c2231c91765"></div>    
+    <section id="blog-posts" class="py-5">
+        <h2>Recent Blog Posts</h2>
         <div class="row">
-            <div class="col-md-6">
-                <img src="{% static 'blog/images/photo.jpg' %}" alt="Medical Team" class="img-fluid rounded">
+            {# Blog posts will be inserted here #}
+            {% for post in posts %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+					<img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'blog/images/photo.jpg' %} {% endif %}" alt="{{ post.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        {% if post.tags.exists %}
+                        <p class="card-text">
+                            Tags: {% for tag in post.tags.all %}
+                            <span class="badge bg-secondary">{{ tag.name }}</span>
+                            {% endfor %}
+                        </p>
+                        {% endif %}
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : '0d368f1d39a3bb78923dc267e7844579',
-                        'format' : 'iframe',
-                        'height' : 60,
-                        'width' : 468,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="//www.highperformanceformat.com/0d368f1d39a3bb78923dc267e7844579/invoke.js"></script>
-                <h2>About Us</h2>
-                <p>We are a medical engineering company dedicated to developing innovative solutions for healthcare challenges. Our mission is to improve patient outcomes and streamline healthcare processes through cutting-edge technology.</p>
-                <p>Our team comprises experienced engineers, medical professionals, and AI specialists, all working together to create impactful tools for the medical field.</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
-
-    <section id="our-app" class="py-5 bg-light">
-        <div class="text-center">
-            <h2>Our Emergency Room Triage App</h2>
-            <p class="lead">Intelligent Triage for Faster, Better Care.</p>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <h3>AI-Powered Assessment</h3>
-                <p>Utilizing the latest in artificial intelligence to quickly and accurately assess patient conditions upon arrival.</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Real-time Data Integration</h3>
-                <p>Seamlessly integrates with hospital systems to provide a comprehensive view of patient data in real-time.</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Prioritization and Workflow</h3>
-                <p>Optimizes patient prioritization and streamlines ER workflows, ensuring the most critical cases are seen first.</p>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <img src="{% static 'images/app_dashboard_mockup.png' %}" alt="App Dashboard Mockup" class="img-fluid rounded" style="max-width: 80%;">
-        </div>
-    </section>
-
-    
 </div>
 {% endblock %}
